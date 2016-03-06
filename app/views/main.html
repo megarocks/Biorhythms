@@ -1,0 +1,59 @@
+<div layout="column" ng-cloak class="md-inline-form">
+  <md-toolbar class="md-warn">
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Biorhythm</h2>
+    </div>
+  </md-toolbar>
+  <md-content flex layout-padding>
+    <div>
+      <form>
+        <div layout=row" layout-wrap layout-align="center">
+          <md-input-container class="md-block" flex="noshrink">
+            <label>Name</label>
+            <input ng-model="main.user.name">
+          </md-input-container>
+          <md-datepicker
+            ng-model="main.user.birthDay"
+            ng-required
+            md-placeholder="Enter birthday">
+          </md-datepicker>
+        </div>
+        <div layout="row" layout-align="center">
+          <md-button
+            ng-click="main.calculate()"
+            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            Calculate
+          </md-button>
+        </div>
+      </form>
+    </div>
+  </md-content>
+
+  <md-content flex layout-padding>
+    <!--<div ng-if="main.user.daysAlive">Days Alive: <span>{{main.user.daysAlive}}</span></div>-->
+    <div google-chart chart="chartObject" style="height:300px; width:75%;"></div>
+    <!--<div>
+      <table ng-if="main.user.rhythms">
+        <thead>
+        <tr>
+          <th>Date</th>
+          <th>P</th>
+          <th>E</th>
+          <th>I</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="day in main.user.rhythms">
+          <td>{{day.date | date}}</td>
+          <td>{{day.physical}}</td>
+          <td>{{day.emotional}}</td>
+          <td>{{day.intellectual}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>-->
+  </md-content>
+</div>
+
+
+
